@@ -9,7 +9,7 @@ import { ExchangeRateService } from '../exchange-rate.service';
 export class CurrencyConverterComponent {
    rates:any={};
    fromCurrency:string ='USD';
-   toCurrency:string='IND';
+   toCurrency:string='INR';
    amount:number=1;
    convertedAmount:number|null = null;
 
@@ -17,8 +17,8 @@ export class CurrencyConverterComponent {
 
    ngOnInit():void{
 this.exchangeRateService.getExchangeRates().subscribe(data =>{
-  this.rates = data.rates;
-  console.log(data)
+  this.rates = data.conversion_rates;
+  console.log(data.conversion_rates)
 })
    }
 

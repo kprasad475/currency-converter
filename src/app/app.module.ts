@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClient,FormsModule
+    AppRoutingModule,FormsModule
   ],
-  providers: [
+  providers: [provideHttpClient(),
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
